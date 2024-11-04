@@ -45,7 +45,7 @@ void Game::run() {
     placeEnemies();
     placeItems();
 
-    log_command("Welcome to the Sunken Ruins of Grumacesta!");
+    log_command("Welcome to the Sunken Ruins of Grumacetus!");
 
     clear();
     refresh();
