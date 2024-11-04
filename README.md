@@ -1,7 +1,7 @@
-# Sunken Ruins of Grumacestus
+# Sunken Ruins of Grumacetus
 
 ## About
-Sunken Ruins of Grumacestus is a terminal-based roguelike game written in C++.
+Sunken Ruins of Grumacetus is a terminal-based roguelike game written in C++.
 
 ## Building
 In the project's home directory, run the command:
@@ -32,5 +32,5 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] ASCII art title screen
 
 ## License
-Sunken Ruins of Grumacestus is licensed under version 3 of the GPL. 
+Sunken Ruins of Grumacetus is licensed under version 3 of the GPL. 
 For more information, see `LICENSE`.
