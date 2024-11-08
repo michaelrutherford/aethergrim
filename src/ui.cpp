@@ -71,6 +71,23 @@ void UI::wrapPrint(WINDOW *win, const std::string &text, int start_y, int start_
 void UI::drawMenu(WINDOW *win) {
     werase(win);
     box(win, 0, 0);
+
+    mvwprintw(win, 2, COLS / 2 - 30, 
+            "    ___       _   _                         _");
+    mvwprintw(win, 3, COLS / 2 - 30, 
+            "   / _ \\     | | | |                       (_)");
+    mvwprintw(win, 4, COLS / 2 - 30, 
+            "  / /_\\ \\ ___| |_| |__   ___ _ __ __ _ _ __ _ _ __ ___");
+    mvwprintw(win, 5, COLS / 2 - 30, 
+            "  |  _  |/ _ \\ __| '_ \\ / _ \\ '__/ _` | '__| | '_ ` _ \\");
+    mvwprintw(win, 6, COLS / 2 - 30, 
+            "  | | | |  __/ |_| | | |  __/ | | (_| | |  | | | | | | |");
+    mvwprintw(win, 7, COLS / 2 - 30, 
+            "  \\_| |_/\\___|\\__|_| |_|\\___|_|  \\__, |_|  |_|_| |_| |_|");
+    mvwprintw(win, 8, COLS / 2 - 30, 
+            "                                  __/ |");
+    mvwprintw(win, 9, COLS / 2 - 30, 
+            "                                 |___/   ");
     
     const std::vector<std::string> options = {"New Game", "About", "Help", "Quit"};
     size_t selected_item = 0;
