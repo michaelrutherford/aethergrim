@@ -1,7 +1,7 @@
-# Grumacetus
+# Aethergrim
 
 ## About
-Grumacetus is a terminal-based roguelike game written in C++.
+Aethergrim is a terminal-based roguelike game written in C++.
 
 ## Building
 In the project's home directory, run the command:
@@ -9,7 +9,7 @@ In the project's home directory, run the command:
 
 ## Running
 In the directory you ran the above command in, run the command:
-> ./grumacetus
+> ./aethergrim
 
 ## Roadmap
 As it stands, the game is incomplete. 
@@ -32,5 +32,5 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] ASCII art title screen
 
 ## License
-Grumacetus is licensed under version 3 of the GPL. 
+Aethergrim is licensed under version 3 of the GPL. 
 For more information, see `LICENSE`.
