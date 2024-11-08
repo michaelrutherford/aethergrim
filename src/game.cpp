@@ -1,5 +1,5 @@
 /* 
-* Grumacetus
+* Aethergrim
 * Copyright (C) 2024- Michael Rutherford
 *
 * This program is free software: you can redistribute it and/or modify
@@ -45,7 +45,7 @@ void Game::run() {
     placeEnemies();
     placeItems();
 
-    log_command("Welcome to the Sunken Ruins of Grumacetus!");
+    log_command("Welcome to the Sunken Ruins!");
 
     clear();
     refresh();
