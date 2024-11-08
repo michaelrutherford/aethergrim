@@ -1,5 +1,5 @@
 /* 
-* Grumacetus
+* Aethergrim
 * Copyright (C) 2024- Michael Rutherford
 *
 * This program is free software: you can redistribute it and/or modify
