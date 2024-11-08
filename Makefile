@@ -13,7 +13,7 @@ LIBS = -lncurses
 SRCS = src/main.cpp src/player.cpp src/enemy.cpp src/map.cpp src/tile.cpp src/game.cpp src/item.cpp src/ui.cpp
 
 # Output executable
-TARGET = grumacetus
+TARGET = aethergrim
 
 # Build the executable
 $(TARGET): $(SRCS)
