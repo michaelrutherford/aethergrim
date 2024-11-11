@@ -16,7 +16,7 @@ As it stands, the game is incomplete.
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
 - [x] Scrollable inventory system
-- [ ] Oxygen mechanic
+- [ ] Hunger mechanic
 - [ ] Consumables
 - [x] FOV mechanic
 - [x] Message console
