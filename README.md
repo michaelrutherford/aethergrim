@@ -22,6 +22,7 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [x] Message console
 - [ ] Wieldable armor/weapons
 - [ ] Loot drops from enemies
+- [ ] Character creation screen
 - [x] Random dungeon generation
 - [ ] Leveling/experience system
 - [ ] Game over screen
