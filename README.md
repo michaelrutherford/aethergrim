@@ -4,6 +4,7 @@
 Aethergrim is a terminal-based roguelike game written in C++.
 
 ## Dependencies
+- ncurses
 
 ## Building
 In the project's home directory, run the command:
@@ -32,7 +33,7 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] Additional depths and staircases
 - [ ] Extensive key commands
 - [ ] Final boss fight
-- [ ] ASCII art title screen
+- [x] ASCII art title screen
 
 ## License
 Aethergrim is licensed under version 3 of the GPL. 
