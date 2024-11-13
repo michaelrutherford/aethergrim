@@ -3,6 +3,8 @@
 ## About
 Aethergrim is a terminal-based roguelike game written in C++.
 
+## Dependencies
+
 ## Building
 In the project's home directory, run the command:
 > make
