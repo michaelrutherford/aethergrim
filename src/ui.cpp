@@ -70,33 +70,35 @@ void UI::wrapPrint(WINDOW *win, const std::string &text, int start_y, int start_
 // Displays the main menu and handles user input
 void UI::drawMenu(WINDOW *win) {
     werase(win);
-    box(win, 0, 0);
 
-    mvwprintw(win, 2, COLS / 2 - 30, 
-            "    ___       _   _                         _");
-    mvwprintw(win, 3, COLS / 2 - 30, 
-            "   / _ \\     | | | |                       (_)");
-    mvwprintw(win, 4, COLS / 2 - 30, 
-            "  / /_\\ \\ ___| |_| |__   ___ _ __ __ _ _ __ _ _ __ ___");
-    mvwprintw(win, 5, COLS / 2 - 30, 
-            "  |  _  |/ _ \\ __| '_ \\ / _ \\ '__/ _` | '__| | '_ ` _ \\");
-    mvwprintw(win, 6, COLS / 2 - 30, 
-            "  | | | |  __/ |_| | | |  __/ | | (_| | |  | | | | | | |");
-    mvwprintw(win, 7, COLS / 2 - 30, 
-            "  \\_| |_/\\___|\\__|_| |_|\\___|_|  \\__, |_|  |_|_| |_| |_|");
-    mvwprintw(win, 8, COLS / 2 - 30, 
-            "                                  __/ |");
-    mvwprintw(win, 9, COLS / 2 - 30, 
-            "                                 |___/   ");
-    
-    const std::vector<std::string> options = {"New Game", "About", "Help", "Quit"};
+    // Enable arrow keys for menu
+    keypad(win, TRUE);
+
+    const std::vector<std::string> options = {"New Game", "Help", "Credits", "Quit"};
     size_t selected_item = 0;
     int ch;
 
     // Main loop for displaying the menu
     while (true) {
         werase(win);
-        box(win, 0, 0);
+
+        // Print ASCII art title
+        mvwprintw(win, 2, COLS / 2 - 30, 
+            "    ___       _   _                         _");
+        mvwprintw(win, 3, COLS / 2 - 30,                 
+            "   / _ \\     | | | |                       (_)");
+        mvwprintw(win, 4, COLS / 2 - 30, 
+            "  / /_\\ \\ ___| |_| |__   ___ _ __ __ _ _ __ _ _ __ ___");
+        mvwprintw(win, 5, COLS / 2 - 30, 
+            "  |  _  |/ _ \\ __| '_ \\ / _ \\ '__/ _` | '__| | '_ ` _ \\");
+        mvwprintw(win, 6, COLS / 2 - 30, 
+            "  | | | |  __/ |_| | | |  __/ | | (_| | |  | | | | | | |");
+        mvwprintw(win, 7, COLS / 2 - 30, 
+            "  \\_| |_/\\___|\\__|_| |_|\\___|_|  \\__, |_|  |_|_| |_| |_|");
+        mvwprintw(win, 8, COLS / 2 - 30, 
+            "                                  __/ |");
+        mvwprintw(win, 9, COLS / 2 - 30, 
+            "                                 |___/   ");
 
         // Highlight selected menu option
         for (size_t i = 0; i < options.size(); ++i) {
@@ -118,8 +120,8 @@ void UI::drawMenu(WINDOW *win) {
         } else if (ch == KEY_ENTER || ch == '\n') { // Enter key
             switch (selected_item) {
                 case 0: return;            // New Game
-                case 1: break;             // About
-                case 2: break;             // Help
+                case 1: break;             // Help
+                case 2: break;             // Credits
                 case 3: endwin(); exit(0); // Quit
             }
         }
@@ -183,11 +185,10 @@ void UI::drawViewport(WINDOW *win, const Player &player, const std::vector<Enemy
 void UI::drawLog(WINDOW *win, const std::vector<std::string> &commandLog, size_t logIndex) {
     werase(win);
     wattron(win, COLOR_PAIR(0));
-    box(win, 0, 0);
     for (size_t i = 0; i < LOG_LINES; i++) {
         size_t index = (logIndex + i) % LOG_LINES;
         if (index < commandLog.size()) {
-            mvwprintw(win, i + 1, 1, "%s", commandLog[index].c_str());
+            mvwprintw(win, i + 1, 1, "- %s", commandLog[index].c_str());
         }
     }
     wattroff(win, COLOR_PAIR(0));
