@@ -4,7 +4,7 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall
+CXXFLAGS = -Wall -std=c++11
 
 # Libraries
 LIBS = -lncurses
