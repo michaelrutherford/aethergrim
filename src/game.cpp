@@ -169,7 +169,7 @@ void Game::placeEnemies() {
             y = rand() % map.MAP_HEIGHT;
         } while (map.getTile(x, y).getSymbol() != '.' || (x == map.getSpawnX() && y == map.getSpawnY()));
 
-        enemies.push_back(Enemy(x, y, "Sea Demon", 'D')); // Add a new enemy
+        enemies.push_back(Enemy(x, y, "Demon", 'D')); // Add a new enemy
     }
 }
 
@@ -182,7 +182,7 @@ void Game::placeItems() {
             y = rand() % map.MAP_HEIGHT;
         } while (map.getTile(x, y).getSymbol() != '.' || (x == map.getSpawnX() && y == map.getSpawnY()));
 
-        items.push_back(Item(x, y, "Sea Weed", "This is sea weed. It is of common value.")); // Add a new item
+        items.push_back(Item(x, y, "Rock", "This is a rock. It is of common value.")); // Add a new item
     }
 }
 
