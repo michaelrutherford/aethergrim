@@ -31,6 +31,7 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [ ] Leveling/experience system
 - [ ] Game over screen
 - [ ] Enemy level scaling
+- [ ] Credits screen
 - [ ] Additional depths and staircases
 - [ ] Extensive key commands
 - [ ] Final boss fight
