@@ -19,17 +19,20 @@
 #include "ui.h"
 
 // Default constructor
-UI::UI() {
+UI::UI()
+{
     initialize();
 }
 
 // Destructor to clean up
-UI::~UI() {
+UI::~UI()
+{
     endwin();
 }
 
 // Initializes the NCurses window and settings
-void UI::initialize() {
+void UI::initialize()
+{
     initscr();            // Start NCurses mode
     cbreak();             // Disable line buffering
     noecho();             // Don't echo user input
@@ -40,7 +43,8 @@ void UI::initialize() {
 }
 
 // Setup color pairs for use in the UI
-void UI::setupColors() {
+void UI::setupColors()
+{
     init_pair(1, COLOR_BLUE, COLOR_BLACK);     // Wall color
     init_pair(2, COLOR_GREEN, COLOR_BLACK);    // Ground color
     init_pair(3, COLOR_WHITE, COLOR_BLACK);    // Visited tiles color
@@ -51,7 +55,8 @@ void UI::setupColors() {
 }
 
 // Prints text word-wrapped in the given window
-void UI::wrapPrint(WINDOW *win, const std::string &text, int start_y, int start_x, int width) {
+void UI::wrapPrint(WINDOW *win, const std::string &text, int start_y, int start_x, int width)
+{
     std::istringstream words(text);
     std::string word;
     int current_y = start_y;
@@ -68,7 +73,8 @@ void UI::wrapPrint(WINDOW *win, const std::string &text, int start_y, int start_
 }
 
 // Displays the main menu and handles user input
-void UI::drawMenu(WINDOW *win) {
+void UI::drawMenu(WINDOW *win)
+{
     werase(win);
 
     // Enable arrow keys for menu
@@ -115,9 +121,11 @@ void UI::drawMenu(WINDOW *win) {
         ch = wgetch(win);
         if (ch == KEY_UP && selected_item > 0) {
             selected_item--; // Move selection up
-        } else if (ch == KEY_DOWN && selected_item < options.size() - 1) {
+        }
+        else if (ch == KEY_DOWN && selected_item < options.size() - 1) {
             selected_item++; // Move selection down
-        } else if (ch == KEY_ENTER || ch == '\n') { // Enter key
+        }
+        else if (ch == KEY_ENTER || ch == '\n') { // Enter key
             switch (selected_item) {
                 case 0: return;            // New Game
                 case 1: break;             // Help
@@ -129,7 +137,9 @@ void UI::drawMenu(WINDOW *win) {
 }
 
 // Draws the game viewport centered around the player
-void UI::drawViewport(WINDOW *win, const Player &player, const std::vector<Enemy> &enemies, const std::vector<Item> &items, const Map &map) {
+void UI::drawViewport(WINDOW *win, const Player &player, const std::vector<Enemy> &enemies, 
+                      const std::vector<Item> &items, const Map &map) 
+{
     int playerX = player.getXCoordinate();
     int playerY = player.getYCoordinate();
 
@@ -165,7 +175,8 @@ void UI::drawViewport(WINDOW *win, const Player &player, const std::vector<Enemy
                             break;
                         }
                     }
-                } else if (!map.getTile(map_x, map_y).getInFOV() && map.getTile(map_x, map_y).getVisited()) {
+                }
+                else if (!map.getTile(map_x, map_y).getInFOV() && map.getTile(map_x, map_y).getVisited()) {
                     ch = map.getTile(map_x, map_y).getSymbol();
                     color_pair = 0;
                 }
@@ -182,7 +193,8 @@ void UI::drawViewport(WINDOW *win, const Player &player, const std::vector<Enemy
 }
 
 // Draws the command log
-void UI::drawLog(WINDOW *win, const std::vector<std::string> &commandLog, size_t logIndex) {
+void UI::drawLog(WINDOW *win, const std::vector<std::string> &commandLog, size_t logIndex)
+{
     werase(win);
     wattron(win, COLOR_PAIR(0));
     for (size_t i = 0; i < LOG_LINES; i++) {
@@ -196,7 +208,8 @@ void UI::drawLog(WINDOW *win, const std::vector<std::string> &commandLog, size_t
 }
 
 // Draws the player's info panel
-void UI::drawInfo(WINDOW *win, const Player &player) {
+void UI::drawInfo(WINDOW *win, const Player &player)
+{
     werase(win);
     wattron(win, COLOR_PAIR(0));
     box(win, 0, 0);
@@ -211,7 +224,8 @@ void UI::drawInfo(WINDOW *win, const Player &player) {
 }
 
 // Draws the inventory screen
-void UI::drawInventory(WINDOW *win, const Player &player) {
+void UI::drawInventory(WINDOW *win, const Player &player)
+{
     werase(win);
     box(win, 0, 0);
     mvwprintw(win, 1, 2, "Inventory:");
@@ -245,17 +259,20 @@ void UI::drawInventory(WINDOW *win, const Player &player) {
         ch = wgetch(win);
         if (ch == 'q') {
             break;
-        } else if (ch == KEY_UP && selected_item > 0) {
+        }
+        else if (ch == KEY_UP && selected_item > 0) {
             selected_item--; // Move selection up
             if (selected_item < start_line) {
                 start_line--; // Scroll up if needed
             }
-        } else if (ch == KEY_DOWN && selected_item < inventory.size() - 1) {
+        }
+        else if (ch == KEY_DOWN && selected_item < inventory.size() - 1) {
             selected_item++; // Move selection down
             if (selected_item >= start_line + max_lines) {
                 start_line++; // Scroll down if needed
             }
-        } else if (ch == KEY_ENTER || ch == '\n') {
+        } 
+        else if (ch == KEY_ENTER || ch == '\n') {
             if (selected_item < inventory.size()) {
                 // Create a new window to display the item details
                 WINDOW *detail_win = newwin(12, 50, (LINES - 12) / 2, (COLS - 50) / 2);
