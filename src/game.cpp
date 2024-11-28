@@ -19,14 +19,16 @@
 #include "game.h"
 
 // Default constructor
-Game::Game() {
+Game::Game()
+{
     // Set player location to the designated spawn point
     player.setXCoordinate(map.getSpawnX());
     player.setYCoordinate(map.getSpawnY());
 }
 
 // Main game loop
-void Game::run() {
+void Game::run()
+{
     srand(time(NULL)); // Seed random number generator
 
     // Initialize player spawn position
@@ -103,7 +105,8 @@ void Game::run() {
 }
 
 // Reset the field of view for the map
-void Game::resetFOV() {
+void Game::resetFOV()
+{
     // Reset all FOV tiles
     for (int y = 0; y < map.MAP_HEIGHT; y++) {
         for (int x = 0; x < map.MAP_WIDTH; x++) {
@@ -128,7 +131,8 @@ void Game::resetFOV() {
 }
 
 // Move the player character
-void Game::movePlayer(int dx, int dy) {
+void Game::movePlayer(int dx, int dy)
+{
     int newX = player.getXCoordinate() + dx;
     int newY = player.getYCoordinate() + dy;
 
@@ -155,13 +159,15 @@ void Game::movePlayer(int dx, int dy) {
             player.setXCoordinate(newX);
             player.setYCoordinate(newY);
         }
-    } else {
+    }
+    else {
         log_command("You can't go that way.");
     }
 }
 
 // Place enemies on the map
-void Game::placeEnemies() {
+void Game::placeEnemies()
+{
     for (int i = 0; i < map.MAX_ENEMIES; i++) {
         int x, y;
         do {
@@ -174,7 +180,8 @@ void Game::placeEnemies() {
 }
 
 // Place items on the map
-void Game::placeItems() {
+void Game::placeItems()
+{
     for (int i = 0; i < map.MAX_ITEMS; i++) {
         int x, y;
         do {
@@ -187,7 +194,8 @@ void Game::placeItems() {
 }
 
 // Move enemies towards the player
-void Game::moveEnemies() {
+void Game::moveEnemies()
+{
     for (auto& enemy : enemies) {
         // Check if enemy is within the player's FOV
         if (enemy.getXCoordinate() >= player.getXCoordinate() - enemy.getFOVRadius() && 
@@ -201,13 +209,15 @@ void Game::moveEnemies() {
             // Move directly toward the player
             if (target_x < player.getXCoordinate()) {
                 target_x++;
-            } else if (target_x > player.getXCoordinate()) {
+            } 
+            else if (target_x > player.getXCoordinate()) {
                 target_x--;
             }
 
             if (target_y < player.getYCoordinate()) {
                 target_y++;
-            } else if (target_y > player.getYCoordinate()) {
+            } 
+            else if (target_y > player.getYCoordinate()) {
                 target_y--;
             }
 
@@ -242,7 +252,8 @@ void Game::moveEnemies() {
                             log_command("You have been defeated!");
                             break;
                         }
-                    } else {
+                    }
+                    else {
                         enemy.setXCoordinate(target_x);
                         enemy.setYCoordinate(target_y);
                     }
@@ -253,7 +264,8 @@ void Game::moveEnemies() {
 }
 
 // Check for collisions with enemies and items
-void Game::checkCollisions() {
+void Game::checkCollisions()
+{
     // Check for collisions with enemies
     for (size_t e = 0; e < enemies.size(); e++) {
         if (enemies[e].getXCoordinate() == player.getXCoordinate() &&
@@ -284,10 +296,12 @@ void Game::checkCollisions() {
 }
 
 // Log a command message
-void Game::log_command(const std::string &command) {
+void Game::log_command(const std::string &command)
+{
     if (command_log.size() < ui.LOG_LINES) {
         command_log.push_back(command);
-    } else {
+    } 
+    else {
         command_log[log_index] = command; // Replace oldest command
     }
     log_index = (log_index + 1) % ui.LOG_LINES; // Update log index
