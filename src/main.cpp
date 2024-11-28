@@ -19,7 +19,8 @@
 #include "game.h"
 
 // Main function to create and run game
-int main() {
+int main()
+{
     Game game;
     game.run();
     
