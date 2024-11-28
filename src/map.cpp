@@ -19,7 +19,8 @@
 #include "map.h"
 
 // Default constructor
-Map::Map() {
+Map::Map()
+{
     srand(static_cast<unsigned int>(time(NULL))); // Seed random number gen
 
     // Initialize the map with walls and the wall color
@@ -80,7 +81,8 @@ Map::Map() {
                         game_map[y][new_x].setSymbol('.');
                         game_map[y][new_x].setColor(2);
                     }
-                } else {
+                }
+                else {
                     // Vertical first, then horizontal
                     for (int y = std::min(prev_y, new_y); y <= std::max(prev_y, new_y); y++) {
                         game_map[y][prev_x].setSymbol('.');
@@ -104,7 +106,8 @@ Map::Map() {
 }
 
 // Remove walls that are isolated and not adjacent to any floor tiles
-void Map::remove_isolated_walls() {
+void Map::remove_isolated_walls()
+{
     for (int y = 1; y < MAP_HEIGHT - 1; y++) {
         for (int x = 1; x < MAP_WIDTH - 1; x++) {
             // If the tile is a wall and has no adjacent floor tiles, remove it
@@ -120,27 +123,32 @@ void Map::remove_isolated_walls() {
 }
 
 // Get the tile at the specified coordinates
-Tile Map::getTile(int x, int y) const {
+Tile Map::getTile(int x, int y) const
+{
     return game_map[y][x]; // Return the tile object
 }
 
 // Get the x-coordinate of where to spawn the player
-int Map::getSpawnX() {
+int Map::getSpawnX()
+{
     return spawn_x;
 }
 
 // Get the y-coordinate of where to spawn the player
-int Map::getSpawnY() {
+int Map::getSpawnY()
+{
     return spawn_y;
 }
 
 // Set the field of view status for a tile
-void Map::toggleFOV(int map_x, int map_y) {
+void Map::toggleFOV(int map_x, int map_y)
+{
     game_map[map_y][map_x].setInFOV(true); // Mark tile as in FOV
     game_map[map_y][map_x].setVisited(true); // Mark tile as visited
 }
 
 // Reset the field of view status for a tile
-void Map::untoggleFOV(int map_x, int map_y) {
+void Map::untoggleFOV(int map_x, int map_y)
+{
     game_map[map_y][map_x].setInFOV(false); // Unmark tile from FOV
 }
