@@ -1,7 +1,7 @@
 # Aethergrim
 
 ## About
-Aethergrim is a terminal-based roguelike game written in C++.
+Aethergrim is an ncurses-based roguelike game written in C++.
 
 ## Dependencies
 - ncurses
