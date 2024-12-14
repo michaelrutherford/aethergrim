@@ -4,7 +4,7 @@
 Aethergrim is a terminal-based roguelike game written in C++.
 
 ## Dependencies
-- ncurses
+- libncurses-dev
 
 ## Building
 In the project's home directory, run the command:
