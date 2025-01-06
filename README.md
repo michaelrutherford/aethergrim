@@ -18,7 +18,6 @@ In the directory you ran the above command in, run the command:
 As it stands, the game is incomplete. 
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
-- [ ] Rewrite in Rust
 - [x] Scrollable inventory system
 - [ ] Hunger mechanic
 - [ ] Consumables
