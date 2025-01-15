@@ -1,7 +1,8 @@
 # Aethergrim
 
 ## About
-Aethergrim is a CLI roguelike game written in C++.
+Aethergrim is a CLI roguelike game written in C++. 
+There are three levels to descend before facing off against the final boss.
 
 ## Dependencies
 - libncurses-dev
@@ -19,6 +20,7 @@ As it stands, the game is incomplete.
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
 - [x] Scrollable inventory system
+- [x] Relicense to MIT
 - [ ] Hunger mechanic
 - [ ] Consumables
 - [x] FOV mechanic
@@ -37,5 +39,4 @@ Below is a list of features that I hope to implement on the road to the 1.0 rele
 - [x] ASCII art title screen
 
 ## License
-Aethergrim is licensed under version 3 of the GPL. 
-For more information, see `LICENSE`.
+Aethergrim is released under the MIT License. For more information, see `LICENSE`.
