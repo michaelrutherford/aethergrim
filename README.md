@@ -1,7 +1,8 @@
 # Aethergrim
 
 ## About
-Aethergrim is a CLI roguelike game written in C++. 
+Aethergrim is a CLI roguelike game written in C++.
+
 There are three levels to descend before facing off against the final boss.
 
 ## Dependencies
