@@ -1,7 +1,7 @@
 # Aethergrim
 
 ## About
-Aethergrim is a CLI roguelike game.
+Aethergrim is a simple CLI roguelike game.
 
 There are three levels to descend before facing off against the final boss.
 
