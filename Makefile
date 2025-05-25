@@ -10,7 +10,7 @@ CXXFLAGS = -Wall -std=c++11
 LIBS = -lncurses
 
 # Source files
-SRCS = src/main.cpp src/player.cpp src/enemy.cpp src/map.cpp src/tile.cpp src/game.cpp src/item.cpp src/ui.cpp
+SRCS = src/main.cpp src/player.cpp src/enemy.cpp src/map.cpp src/tile.cpp src/game.cpp src/item.cpp src/ui.cpp src/log.cpp
 
 # Output executable
 TARGET = aethergrim
