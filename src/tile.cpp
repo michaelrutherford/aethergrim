@@ -4,52 +4,32 @@
 #include "tile.h"
 
 // Default constructor
-Tile::Tile()
-{
-    symbol = ' ';
-    color = 0;
-    visited = false;
-    in_fov = false;
+Tile::Tile() {
+  symbol = ' ';
+  color = 0;
+  visited = false;
+  in_fov = false;
+  passable = true;
 }
 
-// Getters
-char Tile::getSymbol()
-{
-    return symbol;
-}
+// Accessor methods
+char Tile::getSymbol() { return symbol; }
 
-int Tile::getColor()
-{
-    return color;
-}
+int Tile::getColor() { return color; }
 
-bool Tile::getVisited()
-{
-    return visited;
-}
+bool Tile::getVisited() { return visited; }
 
-bool Tile::getInFOV()
-{
-    return in_fov;
-}
+bool Tile::getInFOV() { return in_fov; }
 
-// Setters
-void Tile::setSymbol(char new_symbol)
-{
-    symbol = new_symbol;
-}
+bool Tile::getPassable() { return passable; }
 
-void Tile::setColor(int new_color)
-{
-    color = new_color;
-}
+// Mutator methods
+void Tile::setSymbol(char new_symbol) { symbol = new_symbol; }
 
-void Tile::setVisited(bool new_status)
-{
-    visited = new_status;
-}
+void Tile::setColor(int new_color) { color = new_color; }
 
-void Tile::setInFOV(bool new_status)
-{
-    in_fov = new_status;
-}
+void Tile::setVisited(bool new_status) { visited = new_status; }
+
+void Tile::setInFOV(bool new_status) { in_fov = new_status; }
+
+void Tile::setPassable(bool new_passable) { passable = new_passable; }
