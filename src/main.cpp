@@ -4,10 +4,8 @@
 #include "game.h"
 
 // Main function to create and run game
-int main()
-{
-    Game game;
-    game.run();
-    
-    return 0;
+int main() {
+  Game::getInstance().run();
+
+  return 0;
 }
