@@ -19,7 +19,7 @@ In the directory you ran the above command in, run the command:
 > ./aethergrim
 
 ## Roadmap
-As it stands, the game is complete, but lacking in mechanics, polish, and variety.
+As it stands, the primary game loop is complete, but lacking in mechanics, polish, and variety.
 Below is a list of features that I hope to implement on the road to the 1.0 release.
 
 - [ ] Character creation screen
