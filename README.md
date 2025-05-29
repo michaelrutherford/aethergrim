@@ -1,7 +1,11 @@
 # Aethergrim
 
 ## About
-Aethergrim is a simple CLI roguelike game.
+Aethergrim is a coffee-break roguelike game that you can play in your terminal.
+
+The goal is simple: descend down the 3 levels of the dungeon and find the ring.
+Beware: ghosts haunt the halls and will pursue you if they see you.
+Be sure to use any health potions you find along the way; you will need them!
 
 ## Dependencies
 - libncurses-dev
